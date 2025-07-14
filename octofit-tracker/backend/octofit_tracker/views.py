@@ -1,5 +1,6 @@
 # views.py
 from django.shortcuts import render
+from django.http import HttpResponse
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from .models import User, Team, Activity, Leaderboard, Workout
@@ -36,3 +37,6 @@ class WorkoutList(APIView):
         workouts = Workout.objects.all()
         serializer = WorkoutSerializer(workouts, many=True)
         return Response(serializer.data)
+
+def home(request):
+    return HttpResponse("Welcome to the OctoFit Tracker!")
