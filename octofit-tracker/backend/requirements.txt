@@ -1,0 +1,5 @@
+# Required Python packages for OctoFit Tracker
+Django==4.2
+pytz
+sqlparse
+asgiref
